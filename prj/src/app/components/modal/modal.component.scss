@@ -1,0 +1,77 @@
+.modal {
+    & .modal__content {
+        padding: 0;
+        position: relative;
+    }
+    .modal__close-btn {
+        display: block;
+        width: 16px;
+        height: 16px;
+        box-sizing: content-box;
+        padding: 12px;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        background-image: url("/assets/icons/x.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    & .modal__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding: 40px 24px;
+        background-color: #F5F6F7;
+    }
+    & .modal__btns-wrapper {
+        display: flex;
+        column-gap: 24px;
+        padding: 24px;
+    }
+    & .modal__title {
+        color: #202020;
+        line-height: 48px;
+    }
+    & .modal__description {
+        color: #4D4D4D;
+    }
+    & .modal__add-btn {
+        flex-grow: 1;
+    }
+    & .modal__add-btn {
+        color: #949494;
+    }
+    & .modal__price {
+        color: #ffffff;
+    }
+    & .modal__count {
+        width: 167px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 32px;
+    }
+    & .modal__count-field {
+        width: 19px;
+        flex-shrink: 1;
+        border: none;
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        &:focus, &:active {
+            border: none;
+            outline: none;
+        }
+    }
+    & .modal__count-decrement, & .modal__count-increment {
+        flex-shrink: 0;
+    }
+}

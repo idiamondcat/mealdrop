@@ -1,0 +1,43 @@
+.category {
+    &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+    }
+    &.category--round {
+        width: 200px;
+        padding: 24px 48px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 16px;
+        border-radius: 8px;
+        background-color: #F9F9F9;
+    }
+    &.category--square {
+        width: 427px;
+        height: 309px;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    & .category__img-wrapper {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    & .category__img {
+        height: 100%;
+        object-fit: cover;
+    }
+    & .category__title {
+        font: inherit;
+        font-weight: 500;
+    }
+    & .category__tag {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
+}

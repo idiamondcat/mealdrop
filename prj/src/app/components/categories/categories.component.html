@@ -1,0 +1,14 @@
+<main class="categories">
+    <div class="categories__header">
+        <h1 class="title categories__title">Categories</h1>
+    </div>
+    <section class="categories__section">
+        <div class="container">
+            <h2 class="subtitle categories__subtitle">What’s on the menu?</h2>
+            <p class="categories__text">Whatever you’re craving - we’ll deliver it to your door. Feel like having pizza, sushi or your favourite dish from Tatooine? Explore your possibilities below.</p>
+            <div class="categories__list">
+                <app-category *ngFor="let item of this.categories" [category]="item"></app-category>
+            </div>
+        </div>
+    </section>
+</main>

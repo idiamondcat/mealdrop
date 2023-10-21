@@ -1,0 +1,67 @@
+@import "../../../styles/colors";
+
+.slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & .slider__wrapper {
+        max-width: 1327px;
+        overflow: hidden;
+        // padding-top: 60px;
+        // padding-bottom: 60px;
+    }
+    & .slider__container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 23px;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;
+            scrollbar-width: none
+        }
+    }
+    & .slider__btn {
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        top: 56%;
+        transform: translate(0, -56%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background-color: $white;
+        filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.14));
+        z-index: 12;
+        &.slider__btn--left {
+            left: -32px;
+            & svg {
+                transform: rotate(180deg);
+            }
+        }
+        &.slider__btn--right {
+            right: 0;
+        }
+    }
+    @keyframes move-right {
+        from {
+            left: 0;
+        } to {
+            left: -1327px;
+        }
+    }
+    @keyframes move-left {
+        from {
+            left: -1327px;
+        } to {
+            left: 0;
+        }
+    }
+}

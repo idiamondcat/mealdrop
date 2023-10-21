@@ -1,0 +1,24 @@
+.categories {
+    & .categories__header {
+        width: 100%;
+        min-height: 242px;
+        margin-bottom: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #E5F8BC;
+    }
+    & .categories__subtitle {
+        margin-bottom: 16px;
+    }
+    & .categories__text {
+        margin-bottom: 40px;
+    }
+    & .categories__list {
+        display: grid;
+        grid-template-columns: repeat(3, 427px);
+        grid-auto-rows: 309px;
+        gap: 24px;
+        margin-bottom: 72px;
+    }
+}

@@ -1,0 +1,57 @@
+@import "../../../styles/colors";
+
+.restaurant {
+    & .restaurant__header {
+        width: 100%;
+        height: 242px;
+        display: flex;
+        position: relative;
+    }
+    & .restaurant__img {
+        object-fit: cover;
+        filter: brightness(40%);
+    }
+    & .restaurant__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+    }
+    & .restaurant__about {
+        padding: 32px 0 48px 0;
+        background-color: $white;
+    }
+    & .restaurant__description {
+        margin-bottom: 16px;
+    }
+    & .restaurant__rating {
+        margin-bottom: 24px;
+    }
+    & .restaurant__category-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+    }
+    & .restaurant__menu {
+        background-color: #F9F9F9;
+        padding: 48px 0 72px 0;
+    }
+    & .restaurant__menu-section {
+        &:not(:last-child) {
+            margin-bottom: 72px;
+        }
+    }
+    & .restaurant__items-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: max-content;
+        gap: 24px;
+    }
+    & .restaurant__subtitle {
+        margin-bottom: 16px;
+    }
+    & .restaurant__subtitle-second {
+        margin-bottom: 24px;
+    }
+}

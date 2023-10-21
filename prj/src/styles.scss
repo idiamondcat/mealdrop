@@ -1,0 +1,163 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$prj-primary: mat.define-palette(mat.$indigo-palette);
+$prj-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$prj-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$prj-theme: mat.define-light-theme((
+  color: (
+    primary: $prj-primary,
+    accent: $prj-accent,
+    warn: $prj-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($prj-theme);
+
+@import "./styles/fonts";
+@import "./styles/colors";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font: {
+    family: "Hind-Regular", Arial, sans-serif;
+    size: 18px;
+  }
+  color: $black;
+}
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+.container {
+  max-width: 1359px;
+  margin: 0 auto;
+}
+.title {
+  font: {
+    family: "Montserrat-Bold", Arial, sans-serif;
+    size: 43.95px;
+  }
+  & .title--bolder {
+    font: {
+      family: "Montserrat-Black", Arial, sans-serif;
+      size: 43.95px;
+    }
+  }
+}
+.subtitle {
+  font: {
+    family: "Montserrat-Bold", Arial, sans-serif;
+    size: 35.16px;
+  }
+  &.subtitle--second-level {
+    font-size: 28.13px;
+  }
+  &.subtitle--third-level {
+    font-size: 22.5px;
+  }
+}
+.btn {
+  background-color: $black;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  color: $white;
+  &:hover {
+    cursor: pointer;
+    background-color: #363636;
+  }
+}
+.round-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+    background-color: #F5F6F7;
+  }
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  background-color: #E9E9E9;
+  border-radius: 8px;
+  text-transform: capitalize;
+  &.tag--dark {
+    padding: 8px 16px;
+    background-color: #202020;
+    color: $white;
+  }
+}
+.rating-value {
+  position: relative;
+  padding-left: 19px;
+  &::before {
+      content: "";
+      width: 19px;
+      height: 20px;
+      position: absolute;
+      top: 3px;
+      left: 0;
+      background-image: url("./assets/icons/Review-icon.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
