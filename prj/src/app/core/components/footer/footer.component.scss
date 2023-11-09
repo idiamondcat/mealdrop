@@ -1,0 +1,40 @@
+@use "../../../../styles/fonts" as fonts;
+@use "../../../../styles/colors" as colors;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 48px 0 255px 0;
+  background-color: colors.$bg-footer;
+  & .footer__container {
+    width: 1180px;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: [left-start] auto [left-end] 15.34% [first-col-start] auto [first-col-end] 17.41% [second-col-start] auto [second-col-end] 12.16% [third-col-start] auto [third-col-end];
+  }
+  & .footer__logo {
+    width: 120px;
+    height: 105px;
+  }
+  & .footer__discover {
+    grid-column: first-col-end/first-col-start;
+  }
+  & .footer__social {
+    grid-column: second-col-end/second-col-start;
+  }
+  & .footer__apps {
+    grid-column: third-col-end/third-col-start;
+  }
+  & .footer__subtitle {
+    color: colors.$white;
+    margin-bottom: 16px;
+  }
+  & .footer__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+  & .footer__link {
+    color: colors.$white;
+  }
+}

@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { RestaurantComponent } from './components/restaurant/restaurant.component';
-import { CategoriesComponent } from './components/categories/categories.component';
+import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
+import { ShellComponent } from './core/components/shell/shell.component';
 
 const routes: Routes = [
-  {    path: '', component:  HomeComponent},
-  {    path: 'restaurants/:id', component: RestaurantComponent},
-  {    path: 'categories', component: CategoriesComponent},
-  { path: '**', redirectTo: '/'}
+  {
+    path: '',
+    component: ShellComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./mealdrop/mealdrop.module').then(m => m.MealdropModule),
+      },
+      { path: '**', component: ErrorPageComponent },
+    ],
+  },
 ];
 
 @NgModule({

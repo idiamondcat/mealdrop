@@ -1,0 +1,67 @@
+<div class="modal">
+  <mat-dialog-content class="modal__content">
+    <button class="modal__close-btn" mat-dialog-close></button>
+    <div class="modal__wrapper">
+      <h1 class="subtitle modal__title">{{ data.name }}</h1>
+      <p *ngIf="data.description" class="modal__description">
+        {{ data.description }}
+      </p>
+    </div>
+    <div class="modal__btns-wrapper">
+      <div class="modal__count">
+        <button
+          class="round-btn modal__count-decrement"
+          (click)="changeCount('dec')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none">
+            <path
+              d="M5 12H19"
+              stroke="#909090"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <input
+          class="modal__count-field"
+          type="number"
+          name=""
+          id=""
+          min="1"
+          max="10"
+          value="1" />
+        <button
+          class="round-btn modal__count-increment"
+          (click)="changeCount('inc')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none">
+            <path
+              d="M12 5V19"
+              stroke="#202020"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M5 12H19"
+              stroke="#202020"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <button class="btn modal__add-btn">
+        add for
+        <span class="modal__price">{{ data.price | currency: '&#8364;' }}</span>
+      </button>
+    </div>
+  </mat-dialog-content>
+</div>

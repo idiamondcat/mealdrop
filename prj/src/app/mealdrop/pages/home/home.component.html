@@ -1,0 +1,47 @@
+<div class="home">
+  <section class="home__banner">
+    <div class="home__banner-content">
+      <h1 class="title home__title">
+        <span class="title--bolder">Hungry?</span> Find your next meal
+      </h1>
+      <a routerLink="categories/all" class="btn home__restaurants-btn"
+        >See all restaurants</a
+      >
+    </div>
+  </section>
+  <section class="home__favourite">
+    <div class="container">
+      <h2 class="subtitle home__subtitle">Our favourite picks</h2>
+      <app-slider [sliderElems]="restaurants | favourite"></app-slider>
+    </div>
+  </section>
+  <section class="home__extra-banner">
+    <div class="container home__extra-banner-cont">
+      <div class="home__banner-left-side">
+        <span class="title"
+          ><span class="title--bolder">Award winning</span><br />
+          The best restaurants near you!</span
+        >
+        <a class="btn home__restaurants-btn" routerLink="categories/all"
+          >Explore the best restaurants</a
+        >
+      </div>
+      <div class="home__banner-right-side"></div>
+    </div>
+  </section>
+  <section class="home__new">
+    <div class="container">
+      <h2 class="subtitle home__subtitle">New arrivals</h2>
+      <app-slider [sliderElems]="restaurants | new"></app-slider>
+    </div>
+  </section>
+  <section class="home__categories">
+    <div class="container">
+      <div class="home__wrapper">
+        <h2 class="subtitle home__subtitle">Categories</h2>
+        <a routerLink="categories/all">View all categories</a>
+      </div>
+      <app-slider [sliderElems]="categories | toRound"></app-slider>
+    </div>
+  </section>
+</div>

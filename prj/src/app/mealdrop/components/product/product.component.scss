@@ -1,0 +1,21 @@
+@use "../../../../styles/colors" as colors;
+
+.product {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: colors.$white;
+    border-radius: 4px;
+    &:hover {
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 14px 26px 0px;
+    }
+    & .product__subtitle-third {
+        margin-bottom: 8px;
+    }
+    & .product__item-description {
+        margin-bottom: 16px;
+        color: #636871;
+    }
+}

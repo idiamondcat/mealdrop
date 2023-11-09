@@ -1,0 +1,9 @@
+<div class="product" (click)="openDialog()" role="button" tabindex="0">
+  <h3 class="subtitle subtitle--third-level product__subtitle-third">
+    {{ product.name }}
+  </h3>
+  <p *ngIf="product.description" class="product__item-description">
+    {{ product.description }}
+  </p>
+  <p class="product__item-price">{{ product.price | currency: '&#8364;' }}</p>
+</div>

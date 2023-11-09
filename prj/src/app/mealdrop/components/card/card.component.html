@@ -1,0 +1,35 @@
+<div class="card">
+  <a [routerLink]="['', restaurant.id]">
+    <div
+      class="card__img-wrapper"
+      [ngClass]="{
+        'card__img-wrapper--new': restaurant.isNew,
+        'card__img-wrapper--closed': restaurant.isClosed
+      }">
+      <img
+        class="card__img"
+        [src]="restaurant.image"
+        [alt]="restaurant.name"
+        [ngClass]="{
+          'card__img--closed': restaurant.isClosed
+        }"
+        loading="lazy" />
+    </div>
+    <div class="card__description">
+      <h2 class="subtitle subtitle--third-level card__name">
+        {{ restaurant.name }}
+      </h2>
+      <p class="card__rating">
+        <span class="rating-value card__rating-value">{{
+          restaurant.rating.rate || 'No rating yet'
+        }}</span>
+      </p>
+      <p class="cart__description">{{ restaurant.description }}</p>
+      <div class="card_category-wrapper">
+        <ng-container *ngFor="let item of restaurant.category">
+          <span class="tag">{{ item }}</span>
+        </ng-container>
+      </div>
+    </div>
+  </a>
+</div>
