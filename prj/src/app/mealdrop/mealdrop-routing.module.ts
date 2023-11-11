@@ -6,8 +6,8 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: ':id', component: RestaurantComponent },
-  { path: 'categories/all', component: CategoriesComponent },
+  { path: 'restaurants/:id', component: RestaurantComponent },
+  { path: 'categories', component: CategoriesComponent },
 ];
 
 @NgModule({

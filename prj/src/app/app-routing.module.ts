@@ -13,7 +13,8 @@ const routes: Routes = [
         loadChildren: () =>
           import('./mealdrop/mealdrop.module').then(m => m.MealdropModule),
       },
-      { path: '**', component: ErrorPageComponent },
+      { path: 'page-not-found', component: ErrorPageComponent },
+      { path: '**', redirectTo: 'page-not-found' }
     ],
   },
 ];

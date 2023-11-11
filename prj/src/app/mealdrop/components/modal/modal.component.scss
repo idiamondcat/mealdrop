@@ -61,6 +61,7 @@
         width: 19px;
         flex-shrink: 1;
         border: none;
+        appearance: none;
         -moz-appearance: textfield;
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
