@@ -40,6 +40,9 @@
         background-color: colors.$white;
         filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.14));
         z-index: 12;
+        &:disabled {
+            opacity: 0.5;
+        }
         &.slider__btn--left {
             left: -32px;
             & svg {
@@ -48,20 +51,6 @@
         }
         &.slider__btn--right {
             right: 0;
-        }
-    }
-    @keyframes move-right {
-        from {
-            left: 0;
-        } to {
-            left: -1327px;
-        }
-    }
-    @keyframes move-left {
-        from {
-            left: -1327px;
-        } to {
-            left: 0;
         }
     }
 }

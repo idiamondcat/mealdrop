@@ -5,17 +5,21 @@ export default interface IRest {
   description: string;
   category: string[];
   image: string;
-  rating: {
-    rate: number | null;
-    count: number;
-  };
+  rating: IRating;
   isClosed: boolean;
   isNew: boolean;
-  menu: {
-    food: IProduct[];
-    dessert: IProduct[];
-    drinks: IProduct[];
-  };
+  menu: IMenu;
+}
+
+interface IRating {
+  rate: number | null;
+  count: number;
+}
+
+interface IMenu {
+  food: IProduct[];
+  dessert: IProduct[];
+  drinks: IProduct[];
 }
 
 export interface IProduct {

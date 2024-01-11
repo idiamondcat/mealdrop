@@ -1,4 +1,4 @@
-<div class="slider" id="{{ id }}">
+<div class="slider">
   <button class="slider__btn slider__btn--left" (click)="moveLeft()">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,11 +21,11 @@
     </svg>
   </button>
   <div class="slider__wrapper">
-    <div class="slider__container">
+    <div class="slider__container" #moveSlider>
       <ng-container
         *ngIf="sliderElems[0].hasOwnProperty('address'); else category">
-        <app-card
-          *ngFor="let elem of sliderElems"
+        <app-card style="display: block"
+          *ngFor="let elem of sliderElems; let i = index"
           [restaurant]="elem"></app-card>
       </ng-container>
       <ng-template #category>

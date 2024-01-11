@@ -17,13 +17,13 @@
           "menu": {
             "food": [
               {
-                "id": 1,
+                "id": 11,
                 "name": "Cheeseburger",
                 "description": "Nice grilled burger with cheese",
                 "price": 8.5
               },
               {
-                "id": 2,
+                "id": 12,
                 "name": "Fries",
                 "description": "Fried french fries",
                 "price": 2.5
@@ -31,7 +31,7 @@
             ],
             "dessert": [
               {
-                "id": 3,
+                "id": 13,
                 "name": "Vanilla ice cream",
                 "description": "Ice cream",
                 "price": 2
@@ -39,17 +39,17 @@
             ],
             "drinks": [
               {
-                "id": 4,
+                "id": 14,
                 "name": "Coca-Cola",
                 "price": 1.75
               },
               {
-                "id": 5,
+                "id": 15,
                 "name": "Fanta",
                 "price": 1.5
               },
               {
-                "id": 6,
+                "id": 16,
                 "name": "Sprite",
                 "price": 1.5
               }
@@ -72,13 +72,13 @@
           "menu": {
             "food": [
               {
-                "id": 1,
+                "id": 21,
                 "name": "Pad Thai",
                 "description": "Stir-fried rice noodle with chicken or seafood",
                 "price": 8.5
               },
               {
-                "id": 2,
+                "id": 22,
                 "name": "Tom Yum",
                 "description": "Hot and sour Thai soup",
                 "price": 13
@@ -86,14 +86,14 @@
             ],
             "dessert": [
               {
-                "id": 3,
+                "id": 23,
                 "name": "Mango Sticky Rice",
                 "description":
                   "Traditional Thai dessert with sweet sticky rice and fresh mangoes",
                 "price": 5.7
               },
               {
-                "id": 4,
+                "id": 24,
                 "name": "Thai Banana Fritters",
                 "description": "Thai fried bananas with coconut ice cream",
                 "price": 7.5
@@ -101,12 +101,12 @@
             ],
             "drinks": [
               {
-                "id": 5,
+                "id": 25,
                 "name": "Iced Tea With Lemon",
                 "price": 2
               },
               {
-                "id": 6,
+                "id": 26,
                 "name": "Coca-Cola",
                 "price": 3
               }
@@ -129,19 +129,19 @@
           "menu": {
             "food": [
               {
-                "id": 1,
+                "id": 31,
                 "name": "Carbonara",
                 "description": "Nice grilled burger with cheese",
                 "price": 22
               },
               {
-                "id": 2,
+                "id": 32,
                 "name": "Bolognese",
                 "description": "Fried french fries",
                 "price": 22
               },
               {
-                "id": 3,
+                "id": 33,
                 "name": "Insalata mista",
                 "description": "Mixed salad",
                 "price": 5
@@ -150,17 +150,17 @@
             "dessert": [],
             "drinks": [
               {
-                "id": 4,
+                "id": 34,
                 "name": "Coca-Cola",
                 "price": 1.75
               },
               {
-                "id": 5,
+                "id": 35,
                 "name": "Fanta",
                 "price": 1.5
               },
               {
-                "id": 6,
+                "id": 36,
                 "name": "Sprite",
                 "price": 1.5
               }
@@ -183,19 +183,19 @@
           "menu": {
             "food": [
               {
-                "id": 1,
+                "id": 41,
                 "name": "Salmon fillet with grilled leek",
                 "description": "",
                 "price": 22
               },
               {
-                "id": 2,
+                "id": 42,
                 "name": "Fish and chips",
                 "description": "Fried Cod Filet",
                 "price": 19.5
               },
               {
-                "id": 3,
+                "id": 43,
                 "name": "Plateau",
                 "description": "Fresh salad, smoked mackerel, shrimp, crab salad and two types of smoked salmon",
                 "price": 17.5
@@ -203,7 +203,7 @@
             ],
             "dessert": [
               {
-                "id": 4,
+                "id": 44,
                 "name": "Lemon Meringue Pie",
                 "description":
                   "Dessert pie consisting of a shortened pastry base filled with lemon curd and topped with meringue",
@@ -212,17 +212,17 @@
             ],
             "drinks": [
               {
-                "id": 5,
+                "id": 45,
                 "name": "San Pellegrino",
                 "price": 3.5
               },
               {
-                "id": 6,
+                "id": 46,
                 "name": "Fever-Tree",
                 "price": 4
               },
               {
-                "id": 7,
+                "id": 47,
                 "name": "Lipton Ice Tea",
                 "price": 3.25
               }
@@ -245,19 +245,19 @@
           "menu": {
             "food": [
               {
-                "id": 1,
+                "id": 51,
                 "name": "Ayam Malakka",
                 "description": "Chickenfillet in a spicy peanut sauce with tomato and spring onions",
                 "price": 21.5
               },
               {
-                "id": 2,
+                "id": 52,
                 "name": "Udang Mentega",
                 "description": "Shrimps in a soya sauce with spring unions and ginger",
                 "price": 27.5
               },
               {
-                "id": 3,
+                "id": 53,
                 "name": "Bami Goreng Jakarta",
                 "description": "Fried rice with chicken and shrimps",
                 "price": 19.5
@@ -266,12 +266,12 @@
             "dessert": [],
             "drinks": [
               {
-                "id": 4,
+                "id": 54,
                 "name": "Coca-Cola",
                 "price": 1.75
               },
               {
-                "id": 5,
+                "id": 55,
                 "name": "Soda",
                 "price": 1.5
               }
@@ -295,31 +295,31 @@
             "food": [],
             "dessert": [
               {
-                "id": 1,
+                "id": 61,
                 "name": "Chocolate sauce & coconut",
                 "description": "",
                 "price": 11.25
               },
               {
-                "id": 2,
+                "id": 62,
                 "name": "Banana & honey",
                 "description": "",
                 "price": 12.5
               },
               {
-                "id": 3,
+                "id": 63,
                 "name": "Apple & cinnamon",
                 "description": "",
                 "price": 12.5
               },
               {
-                "id": 4,
+                "id": 64,
                 "name": "Bacon, cheese & sugared ginger",
                 "description": "",
                 "price": 14.5
               },
               {
-                "id": 5,
+                "id": 65,
                 "name": "Ham, cheese & tomato",
                 "description": "",
                 "price": 14.5
@@ -327,17 +327,17 @@
             ],
             "drinks": [
               {
-                "id": 6,
+                "id": 66,
                 "name": "Pot of tea",
                 "price": 3.25
               },
               {
-                "id": 7,
+                "id": 67,
                 "name": "Hot chocolate milk with whipped cream",
                 "price": 4.75
               },
               {
-                "id": 8,
+                "id": 68,
                 "name": "Fresh orange juice",
                 "price": 4
               }
@@ -360,19 +360,19 @@
           "menu": {
             "food": [
               {
-                "id": 1,
+                "id": 71,
                 "name": "Frikandel",
                 "description": "Deep-fried sausage made from minced meat, spices, and seasonings",
                 "price": 2.95
               },
               {
-                "id": 2,
+                "id": 72,
                 "name": "Croquettes",
                 "description": "Traditional Dutch snack",
                 "price": 3.25
               },
               {
-                "id": 3,
+                "id": 73,
                 "name": "Fries",
                 "description": "",
                 "price": 3.95
@@ -381,12 +381,12 @@
             "dessert": [],
             "drinks": [
               {
-                "id": 4,
+                "id": 74,
                 "name": "Coca-Cola",
                 "price": 2.75
               },
               {
-                "id": 5,
+                "id": 75,
                 "name": "Fuze Tea Mango",
                 "price": 2.75
               }

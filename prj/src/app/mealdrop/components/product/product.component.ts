@@ -13,10 +13,9 @@ export class ProductComponent {
   constructor(public dialog: MatDialog) {}
 
   public openDialog(): void {
-    const { name, description, price } = this.product;
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '600px',
-      data: { name: name, description: description, price: price },
+      data: this.product,
     });
   }
 }

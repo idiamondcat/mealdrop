@@ -11,7 +11,8 @@
       <div class="modal__count">
         <button
           class="round-btn modal__count-decrement"
-          (click)="changeCount('dec')">
+          (click)="changeCount('dec')"
+          [disabled]="count === min">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -28,15 +29,16 @@
         </button>
         <input
           class="modal__count-field"
-          type="number"
-          name=""
-          id=""
-          min="1"
-          max="10"
-          value="1" />
+          type="text"
+          name="countField"
+          [(ngModel)]="count"
+          ngDefaultControl
+          readonly
+          />
         <button
           class="round-btn modal__count-increment"
-          (click)="changeCount('inc')">
+          (click)="changeCount('inc')"
+          [disabled]="count === max">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -58,9 +60,9 @@
           </svg>
         </button>
       </div>
-      <button class="btn modal__add-btn">
+      <button class="btn modal__add-btn" (click)="addItem()" mat-dialog-close>
         add for
-        <span class="modal__price">{{ data.price | currency: '&#8364;' }}</span>
+        <span class="modal__price">{{ data.price * count | currency: '&#8364;' }}</span>
       </button>
     </div>
   </mat-dialog-content>

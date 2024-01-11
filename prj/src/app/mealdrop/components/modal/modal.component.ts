@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { addToCart } from '../../../redux/actions/cart.actions';
 
 @Component({
   selector: 'app-modal',
@@ -7,28 +9,27 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  count: number = 1;
+  min: number = 1;
+  max: number = 10;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private store: Store) {}
 
   public changeCount(prefix: string): void {
-    const input: HTMLInputElement | null = document.querySelector(
-      '.modal__count-field'
-    );
-    if (input) {
-      const inputVal = Number(input.value);
       switch (prefix) {
         case 'inc':
-          const maxVal = Number(input.max);
-          if (inputVal < maxVal) {
-            input.value = String(inputVal + 1);
+          if (this.count < this.max) {
+            this.count++;
           }
           break;
         case 'dec':
-          const minVal = Number(input.min);
-          if (inputVal > minVal) {
-            input.value = String(inputVal - 1);
+          if (this.count > this.min) {
+            this.count--;
           }
           break;
       }
-    }
+  }
+
+  public addItem() {
+    this.store.dispatch(addToCart({ payload: {item: this.data, count: this.count} }));
   }
 }
