@@ -1,10 +1,9 @@
-import { IProduct } from "../shared/models/restaurant";
+import { IProduct } from '../shared/models/restaurant';
 
 export interface ICart {
-    orders: IOrder[],
-    allItems: number
+  orders: IOrder[];
 }
 export interface IOrder {
-    item: IProduct,
-    count: number
+  item: IProduct;
+  count: number;
 }

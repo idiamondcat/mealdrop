@@ -14,7 +14,7 @@ const routes: Routes = [
           import('./mealdrop/mealdrop.module').then(m => m.MealdropModule),
       },
       { path: 'page-not-found', component: ErrorPageComponent },
-      { path: '**', redirectTo: 'page-not-found' }
+      { path: '**', redirectTo: 'page-not-found' },
     ],
   },
 ];

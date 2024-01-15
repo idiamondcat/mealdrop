@@ -21,21 +21,21 @@
         border-radius: 8px;
         overflow: hidden;
     }
-    & .category__img-wrapper {
+    &__img-wrapper {
         width: 104px;
         height: 104px;
         border-radius: 50%;
         overflow: hidden;
     }
-    & .category__img {
+    &__img {
         height: 100%;
         object-fit: cover;
     }
-    & .category__title {
+    &__title {
         font: inherit;
         font-weight: 500;
     }
-    & .category__tag {
+    &__tag {
         position: absolute;
         top: 16px;
         left: 16px;

@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { RouterModule } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,6 @@ import { RouterModule } from '@angular/router';
     ShellComponent,
   ],
   exports: [ShellComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatDialogModule],
 })
 export class CoreModule {}

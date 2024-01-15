@@ -6,13 +6,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    & .slider__wrapper {
+    &__wrapper {
         max-width: 1327px;
         overflow: hidden;
-        // padding-top: 60px;
-        // padding-bottom: 60px;
     }
-    & .slider__container {
+    &__container {
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -26,7 +24,7 @@
             scrollbar-width: none
         }
     }
-    & .slider__btn {
+    &__btn {
         width: 64px;
         height: 64px;
         position: absolute;

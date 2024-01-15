@@ -1,5 +1,5 @@
 .home {
-    & .home__banner {
+    &__banner {
         height: 820px;
         margin-bottom: 72px;
         background-color: #B1DDE4;
@@ -8,17 +8,17 @@
         background-position: center bottom;
         background-size: contain;
     }
-    & .home__banner-content {
+    &__banner-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         row-gap: 50px;
         padding-top: 151px;
     }
-    & .home__extra-banner {
+    &__extra-banner {
         background-color: #E5F8BC;
     }
-    & .home__extra-banner-cont {
+    &__extra-banner-cont {
         max-height: 487px;
         display: flex;
         align-items: center;
@@ -27,13 +27,13 @@
         overflow: hidden;
         margin-bottom: 70px;
     }
-    & .home__banner-left-side {
+    &__banner-left-side {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         row-gap: 40px;
     }
-    & .home__banner-right-side {
+    &__banner-right-side {
         display: block;
         width: 654px;
         height: 5076px;
@@ -43,18 +43,18 @@
         animation:  60s linear 0s infinite normal none running slide;
         -webkit-animation: 60s linear 0s infinite normal none running slide;
     }
-    & .home__restaurants-btn {
+    &__restaurants-btn {
         padding: 8px 24px;
     }
-    & .home__wrapper {
+    &__wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    & .home__subtitle {
+    &__subtitle {
         margin-bottom: 32px;
     }
-    & .home__favourite, & .home__new, & .home__categories {
+    &__favourite, &__new, &__categories {
         margin-bottom: 72px;
     }
     @keyframes slide {

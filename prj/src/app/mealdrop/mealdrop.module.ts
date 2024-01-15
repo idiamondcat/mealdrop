@@ -11,6 +11,8 @@ import { SliderComponent } from './components/slider/slider.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { OrderComponent } from './pages/order/order.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -23,7 +25,15 @@ import { FormsModule } from '@angular/forms';
     RestaurantComponent,
     SliderComponent,
     ModalComponent,
+    SidebarComponent,
+    OrderComponent
   ],
-  imports: [CommonModule, MealdropRoutingModule, SharedModule, MatDialogModule, FormsModule],
+  imports: [
+    CommonModule,
+    MealdropRoutingModule,
+    SharedModule,
+    MatDialogModule,
+    FormsModule,
+  ],
 })
 export class MealdropModule {}

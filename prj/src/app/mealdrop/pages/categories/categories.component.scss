@@ -1,5 +1,5 @@
 .categories {
-    & .categories__header {
+    &__header {
         width: 100%;
         min-height: 242px;
         margin-bottom: 72px;
@@ -8,13 +8,13 @@
         justify-content: center;
         background-color: #E5F8BC;
     }
-    & .categories__subtitle {
+    &__subtitle {
         margin-bottom: 16px;
     }
-    & .categories__text {
+    &__text {
         margin-bottom: 40px;
     }
-    & .categories__list {
+    &__list {
         display: grid;
         grid-template-columns: repeat(3, 427px);
         grid-auto-rows: 309px;

@@ -1,6 +1,6 @@
 <div class="modal">
   <mat-dialog-content class="modal__content">
-    <button class="modal__close-btn" mat-dialog-close></button>
+    <button class="modal-close-btn" mat-dialog-close></button>
     <div class="modal__wrapper">
       <h1 class="subtitle modal__title">{{ data.name }}</h1>
       <p *ngIf="data.description" class="modal__description">
@@ -33,8 +33,7 @@
           name="countField"
           [(ngModel)]="count"
           ngDefaultControl
-          readonly
-          />
+          readonly />
         <button
           class="round-btn modal__count-increment"
           (click)="changeCount('inc')"
@@ -62,7 +61,9 @@
       </div>
       <button class="btn modal__add-btn" (click)="addItem()" mat-dialog-close>
         add for
-        <span class="modal__price">{{ data.price * count | currency: '&#8364;' }}</span>
+        <span class="modal__price">{{
+          data.price * count | currency: '&#8364;'
+        }}</span>
       </button>
     </div>
   </mat-dialog-content>

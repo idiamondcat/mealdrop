@@ -3,17 +3,17 @@
 
 .header {
   padding: 9px 0 8px 0;
-  & .header__container {
+  &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  & .header__pages-list {
+  &__pages-list {
     display: flex;
     align-items: center;
     column-gap: 8px;
   }
-  & .header__link {
+  &__link {
     display: inline-block;
     padding: 13px 24px;
     color: colors.$black;
@@ -22,7 +22,7 @@
       size: 18px;
     }
   }
-  & .header__orders-btn {
+  &__orders-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,5 +33,16 @@
     // background-image: url("../../assets/icons/shopping-cart\ 2.svg");
     // background-repeat: no-repeat;
     // background-position: center center;
+  }
+  &__orders-btn-title {
+    font: {
+      family: "Hind-Regular", Arial, sans-serif;
+      size: 18px;
+    }
+    margin-left: 11px;
+    color: rgb(144, 144, 144);
+  }
+  &__orders-btn-sum {
+    color: colors.$white;
   }
 }

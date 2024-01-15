@@ -1,0 +1,79 @@
+@use "../../../../styles/colors" as colors;
+@use "../../../../styles/fonts" as fonts;
+
+.mdc-dialog__actions {
+    padding: 0px;
+}
+.mat-mdc-dialog-content {
+    flex-grow: 1;
+}
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    &__header {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #F5F6F7;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+    }
+    &__title {
+        color: #202020;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 16px;
+    }
+    &__item-details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
+    }
+    &__item-name {
+        font-weight: 500;
+    }
+    &__counter {
+        width: 89px;
+        padding: 13px 16px;
+        box-sizing: border-box;
+        font: inherit;
+        background: url("../../../../assets/icons/appearance.svg") calc(100% - 0.5rem) center / 1.5rem no-repeat  rgb(245, 246, 247);
+        border: none;
+        border-radius: 4px;
+        appearance: none;
+        outline: none;
+    }
+    &__total {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        padding: 24px;
+        border-top: 1px solid rgb(233, 233, 233);
+    }
+    &__total-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__checkout-btn {
+        width: 100%;
+        padding: 18px 24px;
+        background-color: #202020;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        font: {
+            family: "Hind-Regular", Arial, sans-serif;
+            size: 16px;
+        };
+        color: colors.$white;
+    }
+}

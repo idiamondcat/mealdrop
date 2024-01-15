@@ -1,0 +1,43 @@
+<div class="sidebar">
+  <div class="sidebar__header">
+    <h1 class="subtitle subtitle--third-level sidebar__title">Your order</h1>
+    <button
+      class="modal-close-btn sidebar__close-btn"
+      mat-dialog-close></button>
+  </div>
+  <mat-dialog-content>
+    <div class="sidebar__wrapper">
+      <ng-container *ngFor="let item of data">
+        <div class="sidebar__item">
+          <div class="sidebar__item-details">
+            <p class="sidebar__item-name">{{ item.item.name }}</p>
+            <p *ngIf="item.item.description" class="sidebar__item-description">
+              {{ item.item.description }}
+            </p>
+            <p class="sidebar__item-price">
+              {{ item.item.price | currency: '&#8364;' }}
+            </p>
+          </div>
+          <div class="sidebar__item-count">
+            <select
+              #quantityElem
+              class="sidebar__counter"
+              name="quantity"
+              (change)="changeCount(item.item.id, quantityElem.value)">
+              <option *ngFor="let num of quantity; let i = index" [selected]="i === item.count">{{ i }}</option>
+            </select>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </mat-dialog-content>
+  <div class="sidebar__total">
+    <p class="sidebar__total-wrapper">
+      <span class="">Total</span>
+      <span></span>
+    </p>
+    <mat-dialog-actions align="center">
+      <button class="sidebar__checkout-btn">Checkout</button>
+    </mat-dialog-actions>
+  </div>
+</div>

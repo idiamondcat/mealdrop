@@ -28,4 +28,3 @@ import { reducers } from './redux/reducers/main';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-

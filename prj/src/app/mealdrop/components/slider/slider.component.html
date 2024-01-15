@@ -24,7 +24,8 @@
     <div class="slider__container" #moveSlider>
       <ng-container
         *ngIf="sliderElems[0].hasOwnProperty('address'); else category">
-        <app-card style="display: block"
+        <app-card
+          style="display: block"
           *ngFor="let elem of sliderElems; let i = index"
           [restaurant]="elem"></app-card>
       </ng-container>
