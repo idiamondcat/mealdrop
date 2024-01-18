@@ -13,7 +13,7 @@ import { SidebarComponent } from 'src/app/mealdrop/components/sidebar/sidebar.co
 })
 export class HeaderComponent implements OnInit {
   orders: IOrder[];
-  sum = 0;
+  sum: number = 0;
   destroyRef = inject(DestroyRef);
   constructor(
     private store: Store,
@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.store
+      this.store
       .select(selectItems)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(res => {

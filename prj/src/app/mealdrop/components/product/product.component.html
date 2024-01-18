@@ -1,4 +1,5 @@
 <div class="product" (click)="openDialog()" role="button" tabindex="0">
+  <span class="product__quantity" *ngIf="quantity">{{quantity}}</span>
   <h3 class="subtitle subtitle--third-level product__subtitle-third">
     {{ product.name }}
   </h3>

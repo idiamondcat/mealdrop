@@ -9,6 +9,10 @@ export const addToCart = createAction(
   '[CART] add',
   props<{ payload: IOrder }>()
 );
+export const updateProduct = createAction(
+  '[CART] update',
+  props<{ payload: {id: number, count: number} }>()
+);
 export const removeFromCart = createAction(
   '[CART] remove',
   props<{ id: string }>()

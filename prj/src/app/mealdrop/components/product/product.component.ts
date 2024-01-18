@@ -10,6 +10,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class ProductComponent {
   @Input() product: IProduct;
+  quantity: number = 0;
   constructor(public dialog: MatDialog) {}
 
   public openDialog(): void {
