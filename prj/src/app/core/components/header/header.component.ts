@@ -1,10 +1,10 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { selectItems } from 'src/app/redux/selectors/cart.selectors';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { IOrder } from 'src/app/redux/redux.models';
 import { MatDialog } from '@angular/material/dialog';
 import { SidebarComponent } from 'src/app/mealdrop/components/sidebar/sidebar.component';
+import { StoreFacadeService } from '../../../redux/store-facade.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,26 +13,22 @@ import { SidebarComponent } from 'src/app/mealdrop/components/sidebar/sidebar.co
 })
 export class HeaderComponent implements OnInit {
   orders: IOrder[];
-  sum: number = 0;
+  sum: Observable<number>;
   destroyRef = inject(DestroyRef);
   constructor(
-    private store: Store,
+    private facade: StoreFacadeService,
     public sidebar: MatDialog
   ) {}
 
   ngOnInit(): void {
-      this.store
-      .select(selectItems)
+      this.facade.order$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(res => {
         if (res) {
           this.orders = res;
-          this.sum = this.orders.reduce(
-            (prev, next) => (prev = prev + next.item.price * next.count),
-            0
-          );
         }
       });
+      this.sum = this.facade.total$;
   }
 
   openOrder() {

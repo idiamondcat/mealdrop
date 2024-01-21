@@ -1,29 +1,32 @@
 import { createReducer, on } from '@ngrx/store';
 import { ICart } from '../redux.models';
 import * as cartActions from '../actions/cart.actions';
-import { state } from '@angular/animations';
 
 export const initialState: ICart = {
-  orders: [],
+  restaurant: '',
+  orders: []
 };
 
 export const getCart = createReducer(
   initialState,
   on(cartActions.addToCart, (state, action) => {
+    const restaurant = state.restaurant ? state.restaurant : action.restaurant;
     const orderIdx = state.orders.findIndex(
-      order => order.item.id === action.payload.item.id
+      order => order.item.id === action.order.item.id
     );
     if (orderIdx !== -1) {
       const copyOfOrders = [...state.orders];
-      copyOfOrders[orderIdx] = {...copyOfOrders[orderIdx], count: action.payload.count};
+      copyOfOrders[orderIdx] = {...copyOfOrders[orderIdx], count: action.order.count};
       return {
         ...state,
         orders: copyOfOrders,
+        restaurant: restaurant
       };
     } else {
       return {
         ...state,
-        orders: [...state.orders, action.payload],
+        orders: [...state.orders, action.order],
+        restaurant: restaurant
       };
     }
   }),

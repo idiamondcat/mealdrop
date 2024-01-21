@@ -13,7 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { OrderComponent } from './pages/order/order.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     MatDialogModule,
     FormsModule,
+    ReactiveFormsModule
   ],
 })
 export class MealdropModule {}

@@ -34,7 +34,7 @@
   <div class="sidebar__total">
     <p class="sidebar__total-wrapper">
       <span class="">Total</span>
-      <span>{{total | currency: '&#8364;'}}</span>
+      <span>{{total | async | currency: '&#8364;'}}</span>
     </p>
     <mat-dialog-actions align="center">
       <a class="sidebar__checkout-btn" mat-dialog-close routerLink="order">Checkout</a>

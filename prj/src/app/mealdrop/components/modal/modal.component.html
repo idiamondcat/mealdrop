@@ -2,9 +2,9 @@
   <mat-dialog-content class="modal__content">
     <button class="modal-close-btn" mat-dialog-close></button>
     <div class="modal__wrapper">
-      <h1 class="subtitle modal__title">{{ data.name }}</h1>
-      <p *ngIf="data.description" class="modal__description">
-        {{ data.description }}
+      <h1 class="subtitle modal__title">{{ data.item.name }}</h1>
+      <p *ngIf="data.item.description" class="modal__description">
+        {{ data.item.description }}
       </p>
     </div>
     <div class="modal__btns-wrapper">
@@ -62,7 +62,7 @@
       <button class="btn modal__add-btn" (click)="addItem()" mat-dialog-close>
         add for
         <span class="modal__price">{{
-          data.price * count | currency: '&#8364;'
+          data.item.price * count | currency: '&#8364;'
         }}</span>
       </button>
     </div>

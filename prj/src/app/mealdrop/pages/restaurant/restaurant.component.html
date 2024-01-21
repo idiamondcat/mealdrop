@@ -35,7 +35,7 @@
           <div class="restaurant__items-list">
             <app-product
               *ngFor="let item of restaurant.menu.food"
-              [product]="item"></app-product>
+              [product]="item" [restaurant]="restaurant.name"></app-product>
           </div>
         </section>
         <section

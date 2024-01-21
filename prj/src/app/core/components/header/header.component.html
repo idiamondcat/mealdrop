@@ -70,10 +70,10 @@
                 stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-            <span class="header__orders-btn-title" *ngIf="sum"
+            <span class="header__orders-btn-title" *ngIf="sum | async"
               >Order
               <span class="header__orders-btn-sum">{{
-                sum | currency: '&#8364;'
+                sum | async | currency: '&#8364;'
               }}</span></span
             >
           </button>

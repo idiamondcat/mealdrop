@@ -1,10 +1,9 @@
 import { Component, DestroyRef, Inject, OnInit, inject } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { IOrder } from '../../../redux/redux.models';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { updateProduct } from '../../../redux/actions/cart.actions';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { selectItems } from '../../../redux/selectors/cart.selectors';
+import { StoreFacadeService } from '../../../redux/store-facade.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,30 +12,26 @@ import { selectItems } from '../../../redux/selectors/cart.selectors';
 })
 export class SidebarComponent implements OnInit {
   destroyRef = inject(DestroyRef);
-  total = 0;
+  total: Observable<number>;
   quantity: number[] = Array(11)
     .fill(0)
     .map((num, i) => i);
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: IOrder[],
-    private store: Store
+    private facade: StoreFacadeService
   ) {}
   ngOnInit(): void {
-    this.store
-      .select(selectItems)
+    this.facade.order$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(res => {
         if (res) {
           this.data = res;
-          this.total = this.data.reduce(
-            (prev, next) => (prev = prev + next.item.price * next.count),
-            0
-          );
         }
       });
+    this.total = this.facade.total$;
   }
 
   public changeCount(id: number, count: string) {
-    this.store.dispatch(updateProduct({ payload: { id: id, count: Number(count) } }))
+    this.facade.updateProduct(id, Number(count));
   }
 }

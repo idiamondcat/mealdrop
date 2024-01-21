@@ -1,8 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Store } from '@ngrx/store';
-import { addToCart } from '../../../redux/actions/cart.actions';
-import { selectItems } from 'src/app/redux/selectors/cart.selectors';
+import { StoreFacadeService } from '../../../redux/store-facade.service';
+import { IItem } from 'src/app/shared/models/item';
 
 @Component({
   selector: 'app-modal',
@@ -14,8 +13,8 @@ export class ModalComponent {
   min = 1;
   max = 10;
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private store: Store
+    @Inject(MAT_DIALOG_DATA) public data: IItem,
+    private facade: StoreFacadeService
   ) {}
 
   public changeCount(prefix: string): void {
@@ -34,8 +33,6 @@ export class ModalComponent {
   }
 
   public addItem() {
-    this.store.dispatch(
-      addToCart({ payload: { item: this.data, count: this.count } })
-    );
+    this.facade.addNewProduct(this.data.restaurant, this.data.item, this.count);
   }
 }
