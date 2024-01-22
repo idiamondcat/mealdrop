@@ -4,7 +4,7 @@ import * as cartActions from '../actions/cart.actions';
 
 export const initialState: ICart = {
   restaurant: '',
-  orders: []
+  orders: [],
 };
 
 export const getCart = createReducer(
@@ -16,17 +16,20 @@ export const getCart = createReducer(
     );
     if (orderIdx !== -1) {
       const copyOfOrders = [...state.orders];
-      copyOfOrders[orderIdx] = {...copyOfOrders[orderIdx], count: action.order.count};
+      copyOfOrders[orderIdx] = {
+        ...copyOfOrders[orderIdx],
+        count: action.order.count,
+      };
       return {
         ...state,
         orders: copyOfOrders,
-        restaurant: restaurant
+        restaurant: restaurant,
       };
     } else {
       return {
         ...state,
         orders: [...state.orders, action.order],
-        restaurant: restaurant
+        restaurant: restaurant,
       };
     }
   }),
@@ -36,7 +39,10 @@ export const getCart = createReducer(
     );
     const copyOfOrders = [...state.orders];
     if (action.payload.count > 0) {
-      copyOfOrders[orderIdx] = {...copyOfOrders[orderIdx], count: action.payload.count};
+      copyOfOrders[orderIdx] = {
+        ...copyOfOrders[orderIdx],
+        count: action.payload.count,
+      };
       return {
         ...state,
         orders: copyOfOrders,
@@ -47,5 +53,5 @@ export const getCart = createReducer(
         orders: copyOfOrders.filter(elem => elem.item.id !== action.payload.id),
       };
     }
-    })
+  })
 );

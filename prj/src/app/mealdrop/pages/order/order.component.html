@@ -1,95 +1,52 @@
 <div class="order">
-    <div class="order__header">
-        <div class="container">
-            <h1 class="subtitle order__title">Your order at {{restaurant | async}}</h1>
-        </div>
+  <div class="order__header">
+    <div class="container">
+      <h1 class="subtitle order__title">
+        Your order at {{ restaurant | async }}
+      </h1>
     </div>
-    <section class="container order__section">
-        <div class="order__details">
-            <div class="order__subtitle-wrapper">
-                <h2 class="subtitle subtitle--third-level">Contact details</h2>
-                <span>Step 1 of 3</span>
-            </div>
-            <div class="order__indicator">
-                <div class="order__current-step"></div>
-            </div>
-            <form class="order__group" [formGroup]="contactForm">
-                <div class="order__form-wrapper">
-                    <div class="order__fieldset order__fieldset--top">
-                        <label class="order__label" for="firstName">First name</label>
-                        <div class="order__field">
-                            <input [ngClass]="{ 'color-error': (getFirstName?.dirty || getFirstName?.touched) && getFirstName?.invalid}" class="order__input" id="firstName" type="text" formControlName="firstName">
-                            <ng-container *ngIf="(getFirstName?.dirty || getFirstName?.touched) && getFirstName?.invalid">
-                                <div class="order__input-error" *ngIf="getFirstName?.errors?.['required']">
-                                    Please enter your first name
-                                </div>
-                                <div class="order__input-error" *ngIf="getFirstName?.errors?.['pattern']">
-                                    You can enter only letters
-                                </div>
-                            </ng-container>
-                        </div>
-                    </div>
-                    <div class="order__fieldset order__fieldset--top">
-                        <label class="order__label" for="lastName">Last name</label>
-                        <div class="order__field">
-                            <input [ngClass]="{ 'color-error': (getLastName?.dirty || getLastName?.touched) && getLastName?.invalid}" class="order__input" id="lastName" type="text" formControlName="lastName">
-                            <ng-container *ngIf="(getLastName?.dirty || getLastName?.touched) && getLastName?.invalid">
-                                <div class="order__input-error" *ngIf="getLastName?.errors?.['required']">
-                                    Please enter your last name
-                                </div>
-                                <div class="order__input-error" *ngIf="getLastName?.errors?.['pattern']">
-                                    You can enter only letters
-                                </div>
-                            </ng-container>
-                        </div>
-                    </div>
-                </div>
-                <div class="order__fieldset">
-                    <label class="order__label" for="email">Email address</label>
-                    <div class="order__field">
-                        <input [ngClass]="{ 'color-error': (getEmail?.dirty || getEmail?.touched) && getEmail?.invalid}" class="order__input" id="email" type="text" formControlName="email">
-                        <ng-container *ngIf="(getEmail?.dirty || getEmail?.touched) && getEmail?.invalid">
-                            <div class="order__input-error" *ngIf="getEmail?.errors?.['required']">
-                                Please enter your email
-                            </div>
-                            <div class="order__input-error" *ngIf="getEmail?.errors?.['email']">
-                                The login email is invalid
-                            </div>
-                        </ng-container>
-                    </div>
-                </div>
-                <div class="order__fieldset">
-                    <label class="order__label" for="phone">Phone number (optional)</label>
-                    <div class="order__field">
-                        <input [ngClass]="{ 'color-error': (getPhone?.dirty || getPhone?.touched) && getPhone?.invalid}" class="order__input" id="phone" type="text" formControlName="phone">
-                        <ng-container *ngIf="(getPhone?.dirty || getPhone?.touched) && getPhone?.invalid">
-                            <div class="order__input-error" *ngIf="getPhone?.errors?.['pattern']">
-                                You can enter only numbers
-                            </div>
-                        </ng-container>
-                    </div>
-                    <span class="order__note">*We’ll only use your phone to call you about your order</span>
-                </div>
-                <div class="order__btn-wrapper">
-                    <button class="btn order__btn" [disabled]="!contactForm.valid">Next step</button>
-                </div>
-            </form>
+  </div>
+  <section class="container order__section">
+    <div class="order__details">
+      <ng-container *ngIf="vm$ | async as vm">
+        <div class="order__subtitle-wrapper">
+          <h2 class="subtitle subtitle--third-level">Details</h2>
+          <span>Step {{ vm.step }} of 3</span>
         </div>
-        <div class="order__user-order">
-            <h2 class="subtitle subtitle--third-level order__user-order-title">Your order</h2>
-            <ul class="order__list">
-                <li class="order__item" *ngFor="let item of order | async">
-                    <span class="order__item-count">{{item.count}}</span>
-                    <span class="order__item-name">{{item.item.name}}</span>
-                    <span class="order__item-price">{{item.item.price | currency: '&#8364;'}}</span>
-                </li>
-            </ul>
-            <div class="order__total">
-                <p class="order__total-wrapper">
-                    <span>Total</span>
-                    <span class="subtitle subtitle--third-level order__price">{{total | async | currency: '&#8364;'}}</span>
-                </p>
-            </div>
+        <div class="order__indicator">
+          <div
+            [ngStyle]="{ width: 'calc(' + vm.step + '/3*100%)' }"
+            class="order__current-step"></div>
         </div>
-    </section>
+        <app-first-step
+          *ngIf="vm.step === 1"
+          (increaseStep)="goToAnotherStep($event)"></app-first-step>
+        <app-second-step
+          *ngIf="vm.step === 2"
+          (decreaseStep)="goToAnotherStep($event)"></app-second-step>
+      </ng-container>
+    </div>
+    <div class="order__user-order">
+      <h2 class="subtitle subtitle--third-level order__user-order-title">
+        Your order
+      </h2>
+      <ul class="order__list">
+        <li class="order__item" *ngFor="let item of order | async">
+          <span class="order__item-count">{{ item.count }}</span>
+          <span class="order__item-name">{{ item.item.name }}</span>
+          <span class="order__item-price">{{
+            item.item.price | currency: '&#8364;'
+          }}</span>
+        </li>
+      </ul>
+      <div class="order__total">
+        <p class="order__total-wrapper">
+          <span>Total</span>
+          <span class="subtitle subtitle--third-level order__price">{{
+            total | async | currency: '&#8364;'
+          }}</span>
+        </p>
+      </div>
+    </div>
+  </section>
 </div>

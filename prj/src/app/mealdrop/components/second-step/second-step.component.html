@@ -1,0 +1,123 @@
+<form class="form" [formGroup]="deliveryForm">
+  <div class="form__form-wrapper">
+    <div class="form__fieldset form__fieldset--two-thirds">
+      <label class="form__label" for="streetName">Streetname</label>
+      <div class="second-step__field">
+        <input
+          [ngClass]="{
+            'color-error':
+              (getStreetname?.dirty || getStreetname?.touched) &&
+              getStreetname?.invalid
+          }"
+          class="form__input"
+          id="streetName"
+          type="text"
+          formControlName="streetName" />
+        <ng-container
+          *ngIf="
+            (getStreetname?.dirty || getStreetname?.touched) &&
+            getStreetname?.invalid
+          ">
+          <div
+            class="form__input-error"
+            *ngIf="getStreetname?.errors?.['required']">
+            Please enter your street name
+          </div>
+          <div
+            class="form__input-error"
+            *ngIf="getStreetname?.errors?.['pattern']">
+            You can enter only letters
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="form__fieldset form__fieldset--third">
+      <label class="form__label" for="houseNum">House number</label>
+      <div class="second-step__field">
+        <input
+          [ngClass]="{
+            'color-error':
+              (getHouse?.dirty || getHouse?.touched) && getHouse?.invalid
+          }"
+          class="form__input"
+          id="houseNum"
+          type="text"
+          formControlName="houseNum" />
+        <ng-container
+          *ngIf="(getHouse?.dirty || getHouse?.touched) && getHouse?.invalid">
+          <div class="form__input-error" *ngIf="getHouse?.errors?.['required']">
+            Please enter your house number
+          </div>
+          <div class="form__input-error" *ngIf="getHouse?.errors?.['pattern']">
+            You can enter only numbers
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="form__form-wrapper">
+    <div class="form__fieldset form__fieldset--half">
+      <label class="form__label" for="zipcode">Zipcode</label>
+      <div class="second-step__field">
+        <input
+          [ngClass]="{
+            'color-error':
+              (getZipcode?.dirty || getZipcode?.touched) && getZipcode?.invalid
+          }"
+          class="form__input"
+          id="zipcode"
+          type="text"
+          formControlName="zipcode" />
+        <ng-container
+          *ngIf="
+            (getZipcode?.dirty || getZipcode?.touched) && getZipcode?.invalid
+          ">
+          <div
+            class="form__input-error"
+            *ngIf="getZipcode?.errors?.['required']">
+            Please enter your zipcode
+          </div>
+          <div
+            class="form__input-error"
+            *ngIf="getZipcode?.errors?.['pattern']">
+            You can enter only numbers
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="form__fieldset form__fieldset--half">
+      <label class="form__label" for="city">City</label>
+      <div class="second-step__field">
+        <input
+          [ngClass]="{
+            'color-error':
+              (getCity?.dirty || getCity?.touched) && getCity?.invalid
+          }"
+          class="form__input"
+          id="city"
+          type="text"
+          formControlName="city" />
+        <ng-container
+          *ngIf="(getCity?.dirty || getCity?.touched) && getCity?.invalid">
+          <div class="form__input-error" *ngIf="getCity?.errors?.['required']">
+            Please enter your city
+          </div>
+          <div class="form__input-error" *ngIf="getCity?.errors?.['pattern']">
+            You can enter only letters
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="form__btn-wrapper">
+    <button class="btn form__btn form__btn--prev" (click)="goToPrev()">
+      Previous step
+    </button>
+    <button
+      class="btn form__btn"
+      [disabled]="!deliveryForm.valid"
+      (click)="placeOrder()">
+      Next step
+    </button>
+  </div>
+</form>

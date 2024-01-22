@@ -1,6 +1,6 @@
-import { IProduct } from "./restaurant";
+import { IProduct } from './restaurant';
 
 export interface IItem {
-    restaurant: string;
-    item: IProduct;
+  restaurant: string;
+  item: IProduct;
 }

@@ -21,14 +21,14 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-      this.facade.order$
+    this.facade.order$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(res => {
         if (res) {
           this.orders = res;
         }
       });
-      this.sum = this.facade.total$;
+    this.sum = this.facade.total$;
   }
 
   openOrder() {

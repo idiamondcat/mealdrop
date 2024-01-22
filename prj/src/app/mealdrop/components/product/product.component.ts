@@ -11,13 +11,13 @@ import { ModalComponent } from '../modal/modal.component';
 export class ProductComponent {
   @Input() product: IProduct;
   @Input() restaurant: string;
-  quantity: number = 0;
+  quantity = 0;
   constructor(public dialog: MatDialog) {}
 
   public openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '600px',
-      data: {restaurant: this.restaurant, item: this.product}
+      data: { restaurant: this.restaurant, item: this.product },
     });
   }
 }

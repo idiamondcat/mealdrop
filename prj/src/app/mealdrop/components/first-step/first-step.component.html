@@ -1,0 +1,119 @@
+<form class="form" [formGroup]="contactForm">
+  <div class="form__form-wrapper">
+    <div class="form__fieldset form__fieldset--half">
+      <label class="form__label" for="firstName">First name</label>
+      <div class="order__field">
+        <input
+          [ngClass]="{
+            'color-error':
+              (getFirstName?.dirty || getFirstName?.touched) &&
+              getFirstName?.invalid
+          }"
+          class="form__input"
+          id="firstName"
+          type="text"
+          formControlName="firstName" />
+        <ng-container
+          *ngIf="
+            (getFirstName?.dirty || getFirstName?.touched) &&
+            getFirstName?.invalid
+          ">
+          <div
+            class="form__input-error"
+            *ngIf="getFirstName?.errors?.['required']">
+            Please enter your first name
+          </div>
+          <div
+            class="form__input-error"
+            *ngIf="getFirstName?.errors?.['pattern']">
+            You can enter only letters
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="form__fieldset form__fieldset--half">
+      <label class="form__label" for="lastName">Last name</label>
+      <div class="order__field">
+        <input
+          [ngClass]="{
+            'color-error':
+              (getLastName?.dirty || getLastName?.touched) &&
+              getLastName?.invalid
+          }"
+          class="form__input"
+          id="lastName"
+          type="text"
+          formControlName="lastName" />
+        <ng-container
+          *ngIf="
+            (getLastName?.dirty || getLastName?.touched) && getLastName?.invalid
+          ">
+          <div
+            class="form__input-error"
+            *ngIf="getLastName?.errors?.['required']">
+            Please enter your last name
+          </div>
+          <div
+            class="form__input-error"
+            *ngIf="getLastName?.errors?.['pattern']">
+            You can enter only letters
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="form__fieldset">
+    <label class="form__label" for="email">Email address</label>
+    <div class="order__field">
+      <input
+        [ngClass]="{
+          'color-error':
+            (getEmail?.dirty || getEmail?.touched) && getEmail?.invalid
+        }"
+        class="form__input"
+        id="email"
+        type="email"
+        formControlName="email" />
+      <ng-container
+        *ngIf="(getEmail?.dirty || getEmail?.touched) && getEmail?.invalid">
+        <div class="form__input-error" *ngIf="getEmail?.errors?.['required']">
+          Please enter your email
+        </div>
+        <div class="form__input-error" *ngIf="getEmail?.errors?.['email']">
+          The login email is invalid
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="form__fieldset">
+    <label class="form__label" for="phone">Phone number (optional)</label>
+    <div class="order__field">
+      <input
+        [ngClass]="{
+          'color-error':
+            (getPhone?.dirty || getPhone?.touched) && getPhone?.invalid
+        }"
+        class="form__input"
+        id="phone"
+        type="text"
+        formControlName="phone" />
+      <ng-container
+        *ngIf="(getPhone?.dirty || getPhone?.touched) && getPhone?.invalid">
+        <div class="form__input-error" *ngIf="getPhone?.errors?.['pattern']">
+          You can enter only numbers
+        </div>
+      </ng-container>
+    </div>
+    <span class="note"
+      >*We’ll only use your phone to call you about your order</span
+    >
+  </div>
+  <div class="form__btn-wrapper">
+    <button
+      class="btn form__btn"
+      [disabled]="!contactForm.valid"
+      (click)="goToNext()">
+      Next step
+    </button>
+  </div>
+</form>

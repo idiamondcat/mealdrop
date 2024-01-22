@@ -1,5 +1,11 @@
 <div class="card">
-  <a [ngStyle]="restaurant.isClosed ? {'pointer-events': 'none'} : {'pointer-events': 'auto'}" [routerLink]="['/restaurants', restaurant.id]">
+  <a
+    [ngStyle]="
+      restaurant.isClosed
+        ? { 'pointer-events': 'none' }
+        : { 'pointer-events': 'auto' }
+    "
+    [routerLink]="['/restaurants', restaurant.id]">
     <div
       class="card__img-wrapper"
       [ngClass]="{

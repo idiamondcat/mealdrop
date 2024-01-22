@@ -24,20 +24,26 @@
               class="sidebar__counter"
               name="quantity"
               (change)="changeCount(item.item.id, quantityElem.value)">
-              <option *ngFor="let num of quantity; let i = index" [selected]="i === item.count">{{ i }}</option>
+              <option
+                *ngFor="let num of quantity; let i = index"
+                [selected]="i === item.count">
+                {{ i }}
+              </option>
             </select>
           </div>
         </div>
       </ng-container>
     </div>
   </mat-dialog-content>
-  <div class="sidebar__total">
+  <div *ngIf="total | async" class="sidebar__total">
     <p class="sidebar__total-wrapper">
       <span class="">Total</span>
-      <span>{{total | async | currency: '&#8364;'}}</span>
+      <span>{{ total | async | currency: '&#8364;' }}</span>
     </p>
     <mat-dialog-actions align="center">
-      <a class="sidebar__checkout-btn" mat-dialog-close routerLink="order">Checkout</a>
+      <a class="sidebar__checkout-btn" mat-dialog-close routerLink="order"
+        >Checkout</a
+      >
     </mat-dialog-actions>
   </div>
 </div>

@@ -12,5 +12,9 @@ export const selectRestaurant = createSelector(
 );
 export const selectTotal = createSelector(
   selectCartSlice,
-  (state: ICart): number => state.orders.reduce((prev, next) => prev = prev + (next.item.price * next.count), 0)
+  (state: ICart): number =>
+    state.orders.reduce(
+      (prev, next) => (prev = prev + next.item.price * next.count),
+      0
+    )
 );

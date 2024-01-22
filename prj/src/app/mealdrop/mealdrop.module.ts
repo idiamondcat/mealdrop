@@ -13,6 +13,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { OrderComponent } from './pages/order/order.component';
+import { OrderSuccessfulComponent } from './pages/order-successful/order-successful.component';
+import { FirstStepComponent } from './components/first-step/first-step.component';
+import { SecondStepComponent } from './components/second-step/second-step.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -26,7 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SliderComponent,
     ModalComponent,
     SidebarComponent,
-    OrderComponent
+    OrderComponent,
+    FirstStepComponent,
+    SecondStepComponent,
+    OrderSuccessfulComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
 export class MealdropModule {}

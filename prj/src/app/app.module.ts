@@ -11,13 +11,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { State, reducers } from './redux/reducers/main';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
-export function localStorageSyncReducer(reducer: ActionReducer<State>): ActionReducer<State> {
+export function localStorageSyncReducer(
+  reducer: ActionReducer<State>
+): ActionReducer<State> {
   return localStorageSync({
     keys: ['order'],
-    rehydrate: true
+    rehydrate: true,
   })(reducer);
 }
-export const metaReducers: Array<MetaReducer<State, any>> = [localStorageSyncReducer];
+export const metaReducers: Array<MetaReducer<State, any>> = [
+  localStorageSyncReducer,
+];
 
 @NgModule({
   declarations: [AppComponent],
