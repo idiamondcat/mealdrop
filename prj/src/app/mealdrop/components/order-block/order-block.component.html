@@ -1,0 +1,22 @@
+<div class="order-block">
+  <h2 class="subtitle subtitle--third-level order-block__user-order-title">
+    Your order
+  </h2>
+  <ul class="order-block__list">
+    <li class="order-block__item" *ngFor="let item of order | async">
+      <span class="order-block__item-count">{{ item.count }}</span>
+      <span class="order-block__item-name">{{ item.item.name }}</span>
+      <span class="order-block__item-price">{{
+        item.item.price | currency: '&#8364;'
+      }}</span>
+    </li>
+  </ul>
+  <div class="order-block__total">
+    <p class="order-block__total-wrapper">
+      <span>Total</span>
+      <span class="subtitle subtitle--third-level order-block__price">{{
+        total | async | currency: '&#8364;'
+      }}</span>
+    </p>
+  </div>
+</div>

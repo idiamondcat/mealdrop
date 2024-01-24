@@ -7,7 +7,7 @@ import ICategory from 'src/app/shared/models/category';
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
-  styleUrls: ['./category-list.component.scss']
+  styleUrls: ['./category-list.component.scss'],
 })
 export class CategoryListComponent {
   name: string;
@@ -15,7 +15,11 @@ export class CategoryListComponent {
   restaurants: IRest[];
   constructor(private activateRoute: ActivatedRoute) {
     this.activateRoute.params.subscribe(params => (this.name = params['name']));
-    this.category = data.categories.find(elem => elem.title.toLocaleLowerCase() === this.name);
-    this.restaurants = data.restaurants.filter(elem => elem.category.includes(this.name.toLowerCase()));
+    this.category = data.categories.find(
+      elem => elem.title.toLocaleLowerCase() === this.name
+    );
+    this.restaurants = data.restaurants.filter(elem =>
+      elem.category.includes(this.name.toLowerCase())
+    );
   }
 }

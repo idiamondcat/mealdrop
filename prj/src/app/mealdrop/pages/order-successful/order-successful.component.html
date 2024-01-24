@@ -4,5 +4,14 @@
       <h1 class="subtitle order__title">Order confirmed!</h1>
     </div>
   </div>
-  <section class="order-confirmed__section"></section>
+  <section class="order-confirmed__section">
+    <div class="order-confirmed__wrapper">
+      <span>Estimated delivery</span>
+      <span class="subtitle order-confirmed__time"
+        >{{ newtime | date: 'H:mm' }} today</span
+      >
+      <app-order-block></app-order-block>
+    </div>
+    <div class="order-confirmed__img"></div>
+  </section>
 </div>

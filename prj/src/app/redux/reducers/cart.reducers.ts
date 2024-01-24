@@ -14,7 +14,6 @@ export const getCart = createReducer(
     const orderIdx = state.orders.findIndex(
       order => order.item.id === action.order.item.id
     );
-    console.log(action.restaurant);
     if (orderIdx !== -1) {
       const copyOfOrders = [...state.orders];
       copyOfOrders[orderIdx] = {
@@ -39,25 +38,29 @@ export const getCart = createReducer(
       order => order.item.id === action.payload.id
     );
     const copyOfOrders = [...state.orders];
-      if (action.payload.count > 0) {
-        copyOfOrders[orderIdx] = {
-          ...copyOfOrders[orderIdx],
-          count: action.payload.count,
-        };
+    if (action.payload.count > 0) {
+      copyOfOrders[orderIdx] = {
+        ...copyOfOrders[orderIdx],
+        count: action.payload.count,
+      };
+      return {
+        ...state,
+        orders: copyOfOrders,
+      };
+    } else {
+      const newOrders = copyOfOrders.filter(
+        elem => elem.item.id !== action.payload.id
+      );
+      if (newOrders.length !== 0) {
         return {
           ...state,
-          orders: copyOfOrders,
+          orders: copyOfOrders.filter(
+            elem => elem.item.id !== action.payload.id
+          ),
         };
       } else {
-          const newOrders = copyOfOrders.filter(elem => elem.item.id !== action.payload.id);
-          if (newOrders.length !== 0) {
-            return {
-              ...state,
-              orders: copyOfOrders.filter(elem => elem.item.id !== action.payload.id),
-            };
-          } else {
-            return initialState;
-          }
+        return initialState;
       }
+    }
   })
 );

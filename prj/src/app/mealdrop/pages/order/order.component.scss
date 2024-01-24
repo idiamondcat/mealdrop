@@ -27,14 +27,6 @@
         background-color: colors.$white;
         border-radius: 8px;
     }
-    &__user-order {
-        width: 427px;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        background-color: colors.$white;
-        border-radius: 8px;
-    }
     &__subtitle-wrapper {
         display: flex;
         align-items: center;
@@ -55,38 +47,5 @@
         display: flex;
         flex-direction: column;
         row-gap: 16px;
-    }
-    &__user-order-title {
-        margin-bottom: 24px;
-    }
-    &__list {
-        flex-grow: 1;
-        margin-bottom: 24px;
-    }
-    &__item {
-        display: flex;
-        align-items: center;
-        &:not(:last-of-type) {
-            margin-bottom: 16px;
-        }
-    }
-    &__item-count {
-        flex: 0.1 1 0%;
-    }
-    &__item-name {
-        flex: 0.6 1 0%;
-    }
-    &__item-price {
-        flex: 0.3 1 0%;
-    }
-    &__total {
-        margin-top: auto;
-        border-top: 1px solid rgb(233, 233, 233);
-    }
-    &__total-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 24px;
     }
 }

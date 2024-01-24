@@ -3,7 +3,8 @@
   [ngClass]="{
     'category--round': category.round,
     'category--square': !category.round
-  }" [routerLink]="['/categories/list/', category.title | lowercase]">
+  }"
+  [routerLink]="['/categories/list/', category.title | lowercase]">
   <ng-container *ngIf="category.round; else notRoundCategory">
     <div class="category__img-wrapper">
       <img

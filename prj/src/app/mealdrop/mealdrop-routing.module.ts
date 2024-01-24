@@ -10,7 +10,7 @@ import { CategoryListComponent } from './pages/category-list/category-list.compo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'restaurants/:id', component: RestaurantComponent },
-  { path: 'categories', component: CategoriesComponent},
+  { path: 'categories', component: CategoriesComponent },
   { path: 'categories/list/:name', component: CategoryListComponent },
   { path: 'order', component: OrderComponent },
   { path: 'placed', component: OrderSuccessfulComponent },

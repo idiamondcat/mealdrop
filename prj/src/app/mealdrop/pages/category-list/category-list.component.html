@@ -1,25 +1,30 @@
 <div class="category-list">
-    <ng-container *ngIf="category">
-        <header class="category-list__header">
-            <img
-            class="category-list__img"
-            [src]=" category.photoUrl"
-            [alt]="category.title" />
-            <h1 class="title category-list__title">{{ category.title }}</h1>
-        </header>
-        <section class="category-list__about">
-            <div class="container">
-                <p class="category-list__pagination">
-                    <a class="category-list__link" routerLink="/categories">categories</a>
-                    <span> / {{category.title | lowercase}}</span>
-                </p>
-                <div *ngIf="restaurants.length !== 0; else notFood" class="category-list__wrapper">
-                    <app-card style="display: block" *ngFor="let elem of restaurants; let i = index" [restaurant]="elem"></app-card>
-                </div>
-                <ng-template #notFood>
-                    <app-not-found></app-not-found>
-                </ng-template>
-            </div>
-        </section>
-    </ng-container>
+  <ng-container *ngIf="category">
+    <header class="category-list__header">
+      <img
+        class="category-list__img"
+        [src]="category.photoUrl"
+        [alt]="category.title" />
+      <h1 class="title category-list__title">{{ category.title }}</h1>
+    </header>
+    <section class="category-list__about">
+      <div class="container">
+        <p class="category-list__pagination">
+          <a class="category-list__link" routerLink="/categories">categories</a>
+          <span> / {{ category.title | lowercase }}</span>
+        </p>
+        <div
+          *ngIf="restaurants.length !== 0; else notFood"
+          class="category-list__wrapper">
+          <app-card
+            style="display: block"
+            *ngFor="let elem of restaurants; let i = index"
+            [restaurant]="elem"></app-card>
+        </div>
+        <ng-template #notFood>
+          <app-not-found></app-not-found>
+        </ng-template>
+      </div>
+    </section>
+  </ng-container>
 </div>

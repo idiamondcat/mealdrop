@@ -7,4 +7,29 @@
         justify-content: center;
         background-color: #E5F8BC;
     }
+    &__section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+        background-color: #F9F9F9;
+    }
+    &__wrapper {
+        max-width: 427px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 36px;
+    }
+    &__time {
+        margin-bottom: 24px;
+    }
+    &__img {
+        width: 100%;
+        min-height: 770px;
+        background-image: url("../../../../assets/img/ladies-sushi-4518d885.svg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+    }
 }
