@@ -17,6 +17,8 @@ import { OrderSuccessfulComponent } from './pages/order-successful/order-success
 import { FirstStepComponent } from './components/first-step/first-step.component';
 import { SecondStepComponent } from './components/second-step/second-step.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryListComponent } from './pages/category-list/category-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FirstStepComponent,
     SecondStepComponent,
     OrderSuccessfulComponent,
+    CategoryListComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

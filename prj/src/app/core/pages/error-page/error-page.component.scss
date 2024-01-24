@@ -1,0 +1,21 @@
+.error {
+    padding: 127px 0 141px 0;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        margin-bottom: 41px;
+    }
+    &__img-wrapper {
+        max-width: 171px;
+        margin-bottom: 41px;
+    }
+    &__text {
+        margin-bottom: 32px;
+    }
+    &__btn {
+        padding: 13px 24px;
+    }
+}

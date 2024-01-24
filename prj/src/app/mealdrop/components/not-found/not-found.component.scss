@@ -1,0 +1,19 @@
+.not-found {
+    padding: 56px 0 72px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__subtitle {
+        margin-bottom: 32px;
+    }
+    &__img-wrapper {
+        max-width: 238px;
+        margin-bottom: 16px;
+    }
+    &__text {
+        margin-bottom: 32px;
+    }
+    &__btn {
+        padding: 13px 24px;
+    }
+}
